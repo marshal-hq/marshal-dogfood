@@ -44,7 +44,7 @@ jobs:
         uses: ./marshal-src/marshal-action
         with:
           pom-path: pom.xml
-          threshold: red
+          threshold: green
           comment-on-pr: 'true'
           fail-on: fail
         env:
