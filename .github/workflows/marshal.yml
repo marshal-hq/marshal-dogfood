@@ -11,37 +11,13 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
-
     steps:
-      - name: Checkout dogfood repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
-      - name: Checkout Marshal source
-        uses: actions/checkout@v4
-        with:
-          repository: marshal-hq/marshal
-          path: marshal-src
-          fetch-depth: 1
-
-      - name: Set up Java 21
-        uses: actions/setup-java@v4
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-
-      - name: Build Marshal fat jar
-        working-directory: marshal-src
-        run: ./gradlew :marshal-cli:shadowJar --no-daemon
-
-      - name: Copy jar into action directory
-        run: |
-          cp marshal-src/marshal-cli/build/libs/marshal-cli-*.jar \
-             marshal-src/marshal-action/marshal-cli.jar
-
-      - name: Run Marshal scan
-        uses: ./marshal-src/marshal-action
+      - name: Marshal scan
+        uses: marshal-hq/marshal/marshal-action@v0.1.0
         with:
           pom-path: pom.xml
           threshold: red
