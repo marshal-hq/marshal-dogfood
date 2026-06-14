@@ -54,7 +54,7 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.17.0</version>
+            <version>2.18.0</version>
         </dependency>
 
         <!-- Jackson (signed, high-reputation — pulled transitively by Spring
@@ -99,7 +99,7 @@
         <dependency>
             <groupId>javax.activation</groupId>
             <artifactId>activation</artifactId>
-            <version>1.1-rev-1</version>
+            <version>1.1.1</version>
         </dependency>
 
         <!-- Database -->
