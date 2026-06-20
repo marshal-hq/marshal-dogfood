@@ -20,7 +20,7 @@ jobs:
         uses: marshal-hq/marshal/marshal-action@main
         with:
           path: .
-          marshal-version: 0.2.0-rc.3
+          marshal-version: 0.2.0
           threshold: red
           comment-on-pr: 'true'
           fail-on: fail
