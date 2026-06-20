@@ -14,12 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
       - name: Marshal scan
-        uses: marshal-hq/marshal/marshal-action@v0.1.0
+        uses: marshal-hq/marshal/marshal-action@main
         with:
-          pom-path: pom.xml
+          path: .
+          marshal-version: 0.2.0-rc.3
           threshold: red
           comment-on-pr: 'true'
           fail-on: fail
